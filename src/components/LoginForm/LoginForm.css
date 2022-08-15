@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&family=Satisfy&display=swap');
 
+/* font-family: 'Satisfy', cursive; */
 
 html, body {
     margin: 0;
@@ -26,16 +27,33 @@ a, p {
     margin: 2px;
     text-decoration: none;
     color: #84a59dff;
+    font-weight: 550;
 }
 
 h2 {
     font-family: 'Antonio', sans-serif; 
-    color: #cfb7c3;
+    color: #f7ede2ff;
 }
 
 h3 {
-    font-size: 2rem;
+    font-family: 'Antonio', sans-serif; 
+    color: #f7ede2ff;
     margin: 0;
+    font-size: small;
+    font-weight: 100;
+}
+
+label {
+    font-family: 'Antonio', sans-serif; 
+    color: #84a59dff;
+}
+
+a:hover {
+    /* border: 2px solid #f28482ff; */
+    /* background-color: #F0F7F4; */
+    color: #f28482ff;
+    font-size: 110%;
+    font-weight: 900;
 }
 
 #username {
@@ -43,9 +61,10 @@ h3 {
     justify-content: flex-start;
     align-items: center;
     column-gap: 5%;
-    padding-top: 1.5vw;
-    padding-bottom: 1.5vw;
-    font-family: 'Satisfy', cursive;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    font-family: 'Antonio', sans-serif; 
+    color: #84a59dff;
 }
 
 #password {
@@ -53,25 +72,26 @@ h3 {
     justify-content: flex-start;
     align-items: center;
     column-gap: 5.5%;
-    padding-bottom: 1.5vw;
-    font-family: 'Barlow Condensed', sans-serif;
+    padding-bottom: 1vw;
+    font-family: 'Antonio', sans-serif;
+    color: #84a59dff;
 }
 
 button {
     border: 2px solid #F0F7F4;
-    background-color: #D9EBE2;
-    padding: 0.25%;
-    font-size: 75%;
-    font-family: 'Barlow Condensed', sans-serif;
-    width: 10%;
+    background-color: #84a59dff;
+    color: #F0F7F4;
+    padding: 0.5%;
+    font-size: 90%;
+    font-family: 'Antonio', sans-serif;
+    width: 15%;
 }
 
 button:hover {
-    border: 2px solid #94c7af;
-    background-color: #D9EBE2;
-    color: #94c7af;
-    font-weight:900;
-    font-size: 0.5em;
+    border: 2px solid #f28482ff;
+    background-color: #F0F7F4;
+    color: #f28482ff;
+    font-size: 90%;
 }
 
 /* header {
@@ -91,7 +111,7 @@ button:hover {
 
 
 
-.form-item {
+/* .form-item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -141,7 +161,7 @@ footer {
     text-align: center;
     color: #efc7c7;
     font-family: 'Parisienne', cursive;
-}
+} */
 
 
 /* CSS HEX:
