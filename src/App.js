@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 import "./App.css";
 import LoginPage from "./pages/LoginPage";
+import NewProject from "./components/NewProject";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route exact path="/" element={<HomePage />} />
       <Route path="/project/:id" element={<ProjectPage />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/newproject" element={<NewProject />} />
     </Routes>
     </div>
     </Router>

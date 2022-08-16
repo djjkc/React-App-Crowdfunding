@@ -29,11 +29,11 @@ function getUsers() {
 {const userData = getUsers()} 
 
     return (
-        <div>
-        <h2>{projectData.title}</h2>
-        <h3>Created at: {projectData.date_created}</h3>
-        <h3>{`Status: ${projectData.is_open}`}</h3>
-        <h3>Pledges:</h3>
+        <div className="pledges">
+            <h2>{projectData.title}</h2>
+            <h3>Created at: {projectData.date_created}</h3>
+            <h3>{`Status: ${projectData.is_open}`}</h3>
+            <h3>Pledges:</h3>
         <ul>
 
         {/* {function matchUserPledgeData(userData, projectData){
@@ -55,7 +55,7 @@ function getUsers() {
             return (
             <li> 
             ${pledgeData.amount} from {pledgeData.supporter}
-            Comment {pledgeData.comment}
+            <div>Note: {pledgeData.comment}</div>
             </li>
             );
         })}
