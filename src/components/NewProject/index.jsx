@@ -78,7 +78,7 @@ function NewProject() {
         />
         </div>
         <button type="submit" onClick={handleSubmit}>
-        Login
+        Submit
         </button>
         </form>
     );
