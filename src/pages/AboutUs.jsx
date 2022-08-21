@@ -1,7 +1,8 @@
-import React from "react"
+import React from "react";
+import AboutUs from "../components/AboutUs";
 
+function AboutUs() {
+    return <AboutUs />;
+}
 
-<body>
-    <h1>This is an About Us page!</h1>
-    <h2>Write in HTML?</h2>
-</body>
+export default AboutUs

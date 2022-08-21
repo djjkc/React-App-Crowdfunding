@@ -1,10 +1,9 @@
 import React from "react";
 
-function AboutUs() {
+function SupportLinks() {
     return (
         <div>
-            <h1>This is an About Us page!</h1>
-            <h2>Write in HTML?</h2>
+            <h1>This is a page with links to external help services!</h1>
         </div>
         // <nav>
         // <Link className="Bernadette" to="/">Bernadette</Link>
@@ -18,6 +17,4 @@ function AboutUs() {
     );
 }
 
-export default AboutUs;
-
-
+export default SupportLinks;

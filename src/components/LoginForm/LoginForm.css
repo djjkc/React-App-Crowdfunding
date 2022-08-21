@@ -20,7 +20,7 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: end;
-    align-items: flex-end;
+    /* align-items: flex-end; */
 }
 
 a, p {
