@@ -15,6 +15,8 @@ function App() {
     
     <Routes>
       <Route exact path="/" element={<HomePage />} />
+      <Route path="/aboutus" element={<AboutUs />} />
+      <Route path="/howwework" element={<HowWeWork />} />
       <Route path="/project/:id" element={<ProjectPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/newproject" element={<NewProject />} />
