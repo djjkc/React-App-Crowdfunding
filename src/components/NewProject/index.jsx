@@ -1,29 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import "./LoginForm.css";
 import { useNavigate } from 'react-router-dom'
 
 function NewProject() {
     const navigate = useNavigate()
-    const [credentials, setCredentials] = useState({
-        username: "",
-        password: "",
+    const [newProject, setProjects] = useState({
+        title: "",
+        description: "",
+        goal: "",
+        image: "",
+        is_open: true,
+        date_created: new Date().toJSON(),
     });
+
+    useEffect(() => {
+        if (!window.localStorage.getItem("token")) {
+            navigate("/login")
+        }
+    }, [])
 
     const handleChange = (e) => {
         const { id, value } = e.target;
-        setCredentials((prevCredentials) => ({
-        ...prevCredentials,
-        [id]: value,
-        }));
+        setProjects({ ...newProject, [id]: value})
     };
 
     const postData = async () => {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}api-token-auth/`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}projects/`, {
             method: "post",
             headers: {
+                "Authorization": `Token ${window.localStorage.getItem("token")}`,
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(credentials),
+            body: JSON.stringify(newProject),
         })
 
         return response.json()
@@ -31,13 +39,14 @@ function NewProject() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (credentials.username && credentials.password) {
+        if ( newProject.title && newProject.description && newProject.goal && newProject.image) {
             postData().then(data => {
-                window.localStorage.setItem('token', data.token)
-                navigate(`/projects/${<id/>}`)
+                navigate(`/project/${data.id}`)
             });
         }
     };
+
+
 
     return (
         <form>
@@ -62,18 +71,18 @@ function NewProject() {
         <div>
         <label htmlFor="goal">Goal:</label>
         <input
-            type="integer"
+            type="number"
             id="goal"
-            placeholder="What is your goal amount?"
+            placeholder="Your goal amount"
             onChange={handleChange}
         />
         </div>
         <div>
         <label htmlFor="image">Image:</label>
         <input
-            type="file"
+            type="url"
             id="image"
-            placeholder="Upload your image here"
+            placeholder="Image URL here"
             onChange={handleChange}
         />
         </div>

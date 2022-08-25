@@ -1,60 +1,58 @@
 import React, { useState, useEffect }from "react";
 import { useParams } from "react-router-dom";
+import Moment from "moment";
 
 function ProjectPage() {
     const [projectData, setProjectData] = useState({pledges: [] });
+    const [users, setUsers] = useState([])
     const { id } = useParams();
     
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}projects/${id}`)
-        .then((results) => {
-        return results.json();
-        })
-        .then((data) => {
-        setProjectData(data);
-        });
+            .then((results) => {
+                return results.json();
+            })
+            .then((data) => {
+                setProjectData(data);
+            });
     }, []);
 
-    // ali's weird workaround - probably needs refactoring this into state?
-function getUsers() {
+    useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}users/`)
-        .then((results) => {
-        return results.json();
-        })
-        .then((data) => {
-        console.log(data)
-        });
-}
+            .then((results) => {
+                return results.json();
+            })
+            .then((data) => {
+                setUsers(data)
+            });
+    }, [])
+    
+    function getUsernameForId(id) {
+        const user=users.filter(u => u.id === id)[0]
+        console.log(user)
+        return user.username
+    }
 
-{const userData = getUsers()} 
+    function changeDateFormat() {
+        const formatDate = Moment().format('DD-MM-YYYY')
+        return formatDate.date_created
+    }
 
     return (
         <div className="pledges">
             <h2>{projectData.title}</h2>
-            <h3>Created at: {projectData.date_created}</h3>
+            <h3>Created at: {changeDateFormat(projectData.date_created)}</h3>
             <h3>{`Status: ${projectData.is_open}`}</h3>
             <h3>Pledges:</h3>
         <ul>
 
-        {/* {function matchUserPledgeData(userData, projectData){
-            return projectData.filter(project => {
-                return userData.some(user => {
-                    return project.
-                })
-            })
-        }} */}
 
         {projectData.pledges.map((pledgeData, index) => {
             console.log(pledgeData)
-            // console.log(userData)
-
-            // i want to loop through pledge info and user info, compare pledge.supporter to user.id, and when they are the same, set that as a variable, return it, set it in our <li> data
-
-            // replace supporter with username where supporter.id = user.id
-
+            
             return (
             <li> 
-            ${pledgeData.amount} from {pledgeData.supporter}
+            ${pledgeData.amount} from {getUsernameForId(pledgeData.supporter)}
             <div>Note: {pledgeData.comment}</div>
             </li>
             );
