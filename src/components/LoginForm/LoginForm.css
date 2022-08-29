@@ -19,8 +19,6 @@ nav {
     flex-basis: 20%;
     display: flex;
     flex-direction: row;
-    justify-content: end;
-    /* align-items: flex-end; */
 }
 
 a, p {
@@ -94,74 +92,6 @@ button:hover {
     font-size: 90%;
 }
 
-/* header {
-    display: flex;
-    justify-content: space-between; 
-} */
-
-/* header h1 {
-    font-size: 3.5vw;
-    margin: 5px;;
-    color: #E9BCBF;
-    padding: 0.3em;
-    padding-left: 1em;
-    font-family: 'Parisienne', cursive;
-} */
-
-
-
-
-/* .form-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-}
-
-.form-item label {
-    flex-basis: 150px;
-    font-size: 2.5vw;
-}
-
-.form-item input,
-.form-item textarea {
-    flex-basis: 50%;
-    border: 2px solid #94c7af;
-}
-
-.form-item input:hover,
-.form-item textarea:hover {
-    border: 2px solid #94c7af;
-}
-
-.form-item input,
-.form-item textarea,
-.form-item button {
-    border: 2px solid #F0F7F4;
-    background-color: #D9EBE2;
-    padding: 0.25%;
-    font-size: 75%;
-    font-family: 'Barlow Condensed', sans-serif;
-}
-
-.form-item button:hover {
-    border: 2px solid #94c7af;
-    background-color: #D9EBE2;
-    color: #94c7af;
-    font-weight:900;
-    font-size: 0.5em;
-}
-
-.form-item button {
-    width: 10%;
-}
-
-footer {
-    font-size: 3vw;
-    text-align: center;
-    color: #efc7c7;
-    font-family: 'Parisienne', cursive;
-} */
 
 
 /* CSS HEX:

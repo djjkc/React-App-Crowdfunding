@@ -10,4 +10,10 @@
     text-decoration: none;
     color: rgb(151, 14, 89);
     font-weight: 550;
+    justify-items:left;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: end;
 }
