@@ -1,15 +1,21 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Bernadette from "../images/Bernadette.png"
 import Bear from "../images/Bear.png"
 
 const Nav = () => {
-    const [loggedIn, setLoggedIn] = useState(!window.localStorage.getItem('token'));
+    const location = useLocation()
+    const [loggedIn, setLoggedIn] = useState(!!window.localStorage.getItem('token'));
     const logOut = () => {
         window.localStorage.removeItem("token");
             setLoggedIn(false)
     }
-    console.log(loggedIn)
+
+
+    React.useEffect(() => {
+        setLoggedIn(!!window.localStorage.getItem('token'))
+    }, [window.localStorage, location]
+    )
     
     return (
         <nav>
@@ -23,7 +29,7 @@ const Nav = () => {
                 :(<Link to = "/login">Login</Link>)}
                 {loggedIn ? (
                 <Link to = "/newproject">New Project</Link>) 
-                :(<img src={Bear} alt="bear" width= "10px" />)}
+                :null}
             </div>
         </nav>
     );
